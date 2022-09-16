@@ -20,7 +20,11 @@
 			"@components/*": ["components/*"],
 			"@lib/*": ["lib/*"],
 			"@config/*": ["config/*"],
-			"@utils/*": ["utils/*"]
+			"@utils/*": ["utils/*"],
+			"@commerce": ["commerce"],
+			"@commerce/*": ["commerce/*"],
+			"@framework": ["framework"],
+			"@framework/*": ["framework/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.d.ts"],
