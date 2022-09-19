@@ -45,3 +45,30 @@ export type Product = {
 	options: ProductOption[]
 	vendor?: string
 }
+
+export type SearchProductsBody = {
+	search?: string
+	categoryId?: string | number
+	brandId?: string | number
+	sort?: string
+	locale?: string
+}
+
+export type ProductTypes = {
+	product: Product
+	searchBody: SearchProductsBody
+}
+
+export type GetProductOperation<T extends ProductTypes = ProductTypes> = {
+	data: { product?: T['product'] }
+	variables: { path: string; slug?: never } | { path?: never; slug: string }
+}
+
+export type GetAllProductsOperation<T extends ProductTypes = ProductTypes> = {
+	data: { products: T['product'][] }
+	variables: {
+		relevance?: 'featured' | 'best_selling' | 'newest'
+		ids?: string[]
+		first?: number
+	}
+}

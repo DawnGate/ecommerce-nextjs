@@ -7,7 +7,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-// import commerce from '@lib/api/commerce'
+import commerce from '@lib/api/commerce'
 
 import { Hero, Marquee } from '@components/ui'
 
@@ -32,15 +32,15 @@ export async function getStaticProps({
 	locales,
 }: GetStaticPropsContext) {
 	const config = { locale, locales }
-	// const productsPromise = commerce.getAllProducts({
-	// 	variables: { first: 6 },
-	// 	config,
-	// 	preview,
-	// 	...({ featured: true } as any),
-	// })
 
-	// const { products } = await productsPromise
-	const { products } = { products: [] }
+	const productsPromise = commerce.getAllProducts({
+		variables: { first: 6 },
+		config,
+		preview,
+		...({ featured: true } as any),
+	})
+
+	const { products } = await productsPromise
 
 	return {
 		props: {
