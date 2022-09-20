@@ -8,11 +8,11 @@ import { Product } from '@commerce/types/product'
 
 import s from './ProductCard.module.css'
 
-// import WishListButton from '@components/wishlish/WishListButton'
+import { WishlistButton } from '@components/wishlist'
 
 // import usePrice from '@framework/product/use-price'
 
-// import ProductTag from '../ProductTag'
+import { ProductTag } from '@components/products'
 
 // Omit => remove some props type has same with the second arguments
 interface Props {
@@ -43,7 +43,7 @@ const ProductCard: FC<Props> = ({
 			<a className={rootClassName} aria-label={product.name}>
 				{variant === 'slim' && (
 					<>
-						<div>
+						<div className={s.header}>
 							<span>{product.name}</span>
 						</div>
 						{product?.images && (
@@ -51,6 +51,9 @@ const ProductCard: FC<Props> = ({
 								<Image
 									src={product.images[0]?.url || placeholderImg}
 									{...imgProps}
+									layout="fixed"
+									height={320}
+									width={320}
 									alt={product.name || 'Product Name'}
 								/>
 							</div>
@@ -58,7 +61,35 @@ const ProductCard: FC<Props> = ({
 					</>
 				)}
 				{variant === 'simple' && <></>}
-				{variant === 'default' && <></>}
+				{variant === 'default' && (
+					<>
+						<WishlistButton
+							className={s.wishlistButton}
+							productId={product.id}
+							variant={product.variants[0] as any}
+						/>
+						<ProductTag
+							name={product.name}
+							price={`${price} ${product.price?.currencyCode}`}
+						/>
+						<div className={s.imageContainer}>
+							{product?.images && (
+								<div>
+									<Image
+										alt={product.name || 'Product Image'}
+										className={s.productImage}
+										src={product.images[0]?.url || placeholderImg}
+										height={540}
+										width={540}
+										quality="85"
+										layout="responsive"
+										{...imgProps}
+									/>
+								</div>
+							)}
+						</div>
+					</>
+				)}
 			</a>
 		</Link>
 	)

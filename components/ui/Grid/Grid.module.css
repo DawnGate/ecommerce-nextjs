@@ -1,0 +1,59 @@
+.root {
+	@apply grid grid-cols-1 gap-0;
+}
+
+.root > * {
+	@apply row-span-1 bg-transparent box-border overflow-hidden;
+	height: 500px;
+	max-height: 800px;
+}
+
+.default > * {
+	@apply bg-transparent;
+}
+
+.layoutNormal {
+	@aplly gap-3;
+}
+
+.layoutA {
+	& > *:nth-child(6n + 1),
+	& > *:nth-child(6n + 5) {
+		@apply row-span-2 lg:col-span-2;
+		height: var(--row-height);
+	}
+
+	&.filled {
+		& > *:nth-child(6n + 1) {
+			@apply bg-violet;
+		}
+		& > *:nth-child(6n + 2) {
+			@apply bg-accent-8;
+		}
+		& > *:nth-child(6n + 3) {
+			@apply bg-pink;
+		}
+		& > *:nth-child(6n + 6) {
+			@apply bg-cyan;
+		}
+	}
+}
+
+@screen md {
+	.layoutNormal > * {
+		max-height: min-content !important;
+	}
+}
+
+@screen lg {
+	.root {
+		@apply grid-cols-3 grid-rows-2;
+	}
+	.root > * {
+		@apply col-span-1;
+		height: inherit;
+	}
+	.layoutNormal > * {
+		max-height: 400px;
+	}
+}

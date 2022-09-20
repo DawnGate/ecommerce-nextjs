@@ -76,7 +76,5 @@ export function getCommerceApi<P extends APIProvider>(
 		}
 	})
 
-	console.log(commerce)
-
 	return commerce
 }

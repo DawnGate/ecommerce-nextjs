@@ -9,14 +9,33 @@ import styles from '../styles/Home.module.css'
 
 import commerce from '@lib/api/commerce'
 
-import { Hero, Marquee } from '@components/ui'
+import { Grid, Hero, Marquee } from '@components/ui'
+import { ProductCard } from '@components/products'
 
 const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	console.log(products)
-
 	return (
 		<>
-			<Marquee variant="secondary">{}</Marquee>
+			<Grid variant="filled">
+				{products.map((product: any, i: number) => {
+					return (
+						<ProductCard
+							key={product.id}
+							product={product}
+							imgProps={{
+								width: i === 0 ? 1080 : 540,
+								height: i === 0 ? 1080 : 540,
+								priority: true,
+							}}
+						/>
+					)
+				})}
+			</Grid>
+			<Marquee variant="secondary">
+				{products.map((product: any, i: number) => (
+					<ProductCard key={product.id} product={product} variant="slim" />
+				))}
+			</Marquee>
 			<Hero
 				headline=" Dessert dragée halvah croissant."
 				description="Cupcake ipsum dolor sit amet lemon drops pastry cotton candy. Sweet carrot cake macaroon bonbon croissant fruitcake jujubes macaroon oat cake. Soufflé bonbon caramels jelly beans. Tiramisu sweet roll cheesecake pie carrot cake. "
