@@ -63,11 +63,11 @@ const ProductCard: FC<Props> = ({
 				{variant === 'simple' && <></>}
 				{variant === 'default' && (
 					<>
-						<WishlistButton
+						{/* <WishlistButton
 							className={s.wishlistButton}
 							productId={product.id}
 							variant={product.variants[0] as any}
-						/>
+						/> */}
 						<ProductTag
 							name={product.name}
 							price={`${price} ${product.price?.currencyCode}`}

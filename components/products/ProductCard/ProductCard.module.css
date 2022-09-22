@@ -38,11 +38,10 @@
 }
 
 .header .name {
-	@apply pt-4 px-6 bg-primary text-primary font-bold transition-colors ease-in-out duration-500;
-	font-size: inherit;
-	letter-spacing: inherit;
-	box-decoration-break: clone;
-	-webkit-box-decoration-break: clone;
+	@apply pt-0 max-w-full w-full leading-extra-loose
+	transition-colors ease-in-out duration-500;
+	font-size: 2rem;
+	letter-spacing: 0.4px;
 }
 
 .header .name span {
@@ -51,6 +50,15 @@
 	letter-spacing: inherit;
 	box-decoration-break: clone;
 	-webkit-box-decoration-break: clone;
+}
+
+.header .price {
+	@apply pt-2 px-6 pb-4 text-sm bg-primary text-accent-9 font-semibold 
+	inline-block tracking-wide transition-colors ease-in-out duration-500;
+}
+
+.imageContainer {
+	@apply flex items-center justify-center overflow-hidden;
 }
 
 .imageContainer > div {
@@ -65,10 +73,17 @@
 	@apply top-0 right-0 z-30 absolute;
 }
 
+.simple .header .name {
+	@apply pt-2 text-lg leading-10 -mt-1;
+}
+
+.simple .header .price {
+	@apply text-sm;
+}
+
 /* slim */
 .slim {
-	@apply bg-transparent relative overflow-hidden
-    box-border;
+	@apply bg-transparent relative overflow-hidden box-border;
 }
 
 .slim .header {

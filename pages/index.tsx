@@ -6,6 +6,7 @@ import type {
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+// import { Layout } from '@components/common'
 
 import commerce from '@lib/api/commerce'
 
@@ -68,5 +69,7 @@ export async function getStaticProps({
 		revalidate: 60,
 	}
 }
+
+// Home.Layout = Layout
 
 export default Home
