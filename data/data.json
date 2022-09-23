@@ -230,6 +230,262 @@
 					]
 				}
 			]
+		},
+		{
+			"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzU0NDczMjQyNzA3NTY=",
+			"name": "Bomber Jacket",
+			"vendor": "Next.js",
+			"path": "/bomber-jacket",
+			"slug": "bomber-jacket",
+			"price": {
+				"value": 635.99,
+				"currencyCode": "USD"
+			},
+			"images": [
+				{
+					"url": "https://cdn.shopify.com/s/files/1/0434/0285/4564/products/bomber-jacket-0.png?v=1622902777",
+					"altText": null,
+					"width": 1000,
+					"height": 1000
+				},
+				{
+					"url": "https://cdn.shopify.com/s/files/1/0434/0285/4564/products/bomber-jacket-1.png?v=1622902777",
+					"altText": null,
+					"width": 1000,
+					"height": 1000
+				}
+			],
+			"variants": [
+				{
+					"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0MzkwNTcwMA==",
+					"name": "L / Black",
+					"sku": "",
+					"price": 635.99,
+					"listPrice": 5200,
+					"requiresShipping": true,
+					"availableForSale": true,
+					"options": [
+						{
+							"__typename": "MultipleChoiceOption",
+							"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0MzkwNTcwMA==",
+							"displayName": "size",
+							"values": [
+								{
+									"label": "L"
+								}
+							]
+						},
+						{
+							"__typename": "MultipleChoiceOption",
+							"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0MzkwNTcwMA==",
+							"displayName": "color",
+							"values": [
+								{
+									"label": "Black",
+									"hexColors": ["#000000"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0MzkzODQ2OA==",
+					"name": "L / DarkOliveGreen",
+					"sku": "",
+					"price": 635.99,
+					"listPrice": 5200,
+					"requiresShipping": true,
+					"availableForSale": true,
+					"options": [
+						{
+							"__typename": "MultipleChoiceOption",
+							"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0MzkzODQ2OA==",
+							"displayName": "size",
+							"values": [
+								{
+									"label": "L"
+								}
+							]
+						},
+						{
+							"__typename": "MultipleChoiceOption",
+							"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0MzkzODQ2OA==",
+							"displayName": "color",
+							"values": [
+								{
+									"label": "DarkOliveGreen",
+									"hexColors": ["#556B2F"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0Mzk3MTIzNg==",
+					"name": "XL / Black",
+					"sku": "",
+					"price": 635.99,
+					"listPrice": 5200,
+					"requiresShipping": true,
+					"availableForSale": true,
+					"options": [
+						{
+							"__typename": "MultipleChoiceOption",
+							"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0Mzk3MTIzNg==",
+							"displayName": "size",
+							"values": [
+								{
+									"label": "XL"
+								}
+							]
+						},
+						{
+							"__typename": "MultipleChoiceOption",
+							"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0Mzk3MTIzNg==",
+							"displayName": "color",
+							"values": [
+								{
+									"label": "Black",
+									"hexColors": ["#000000"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0NDAwNDAwNA==",
+					"name": "XL / DarkOliveGreen",
+					"sku": "",
+					"price": 635.99,
+					"listPrice": 5200,
+					"requiresShipping": true,
+					"availableForSale": true,
+					"options": [
+						{
+							"__typename": "MultipleChoiceOption",
+							"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0NDAwNDAwNA==",
+							"displayName": "size",
+							"values": [
+								{
+									"label": "XL"
+								}
+							]
+						},
+						{
+							"__typename": "MultipleChoiceOption",
+							"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0NDAwNDAwNA==",
+							"displayName": "color",
+							"values": [
+								{
+									"label": "DarkOliveGreen",
+									"hexColors": ["#556B2F"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0NDAzNjc3Mg==",
+					"name": "XXL / Black",
+					"sku": "",
+					"price": 635.99,
+					"listPrice": 5200,
+					"requiresShipping": true,
+					"availableForSale": true,
+					"options": [
+						{
+							"__typename": "MultipleChoiceOption",
+							"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0NDAzNjc3Mg==",
+							"displayName": "size",
+							"values": [
+								{
+									"label": "XXL"
+								}
+							]
+						},
+						{
+							"__typename": "MultipleChoiceOption",
+							"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0NDAzNjc3Mg==",
+							"displayName": "color",
+							"values": [
+								{
+									"label": "Black",
+									"hexColors": ["#000000"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0NDA2OTU0MA==",
+					"name": "XXL / DarkOliveGreen",
+					"sku": "",
+					"price": 635.99,
+					"listPrice": 5200,
+					"requiresShipping": true,
+					"availableForSale": true,
+					"options": [
+						{
+							"__typename": "MultipleChoiceOption",
+							"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0NDA2OTU0MA==",
+							"displayName": "size",
+							"values": [
+								{
+									"label": "XXL"
+								}
+							]
+						},
+						{
+							"__typename": "MultipleChoiceOption",
+							"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDA0NjI0NDA2OTU0MA==",
+							"displayName": "color",
+							"values": [
+								{
+									"label": "DarkOliveGreen",
+									"hexColors": ["#556B2F"]
+								}
+							]
+						}
+					]
+				}
+			],
+			"options": [
+				{
+					"__typename": "MultipleChoiceOption",
+					"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0T3B0aW9uLzY5NDA1MDMwMTU1ODg=",
+					"displayName": "size",
+					"values": [
+						{
+							"label": "L"
+						},
+						{
+							"label": "XL"
+						},
+						{
+							"label": "XXL"
+						}
+					]
+				},
+				{
+					"__typename": "MultipleChoiceOption",
+					"id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0T3B0aW9uLzg2NTU3Njk3NjQwMDQ=",
+					"displayName": "color",
+					"values": [
+						{
+							"label": "Black",
+							"hexColors": ["#000000"]
+						},
+						{
+							"label": "DarkOliveGreen",
+							"hexColors": ["#556B2F"]
+						}
+					]
+				}
+			],
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.",
+			"descriptionHtml": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.</p>",
+			"availableForSale": true,
+			"productType": "jacket"
 		}
 	]
 }
