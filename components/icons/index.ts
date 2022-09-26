@@ -1,3 +1,7 @@
 export { default as ArrowLeft } from './ArrowLeft'
 export { default as ArrowRight } from './ArrowRight'
 export { default as Heart } from './Heart'
+export { default as Github } from './Github'
+export { default as Vercel } from './Vercel'
+export { default as ChevronUp } from './ChevronUp'
+export { default as Cross } from './Cross'
