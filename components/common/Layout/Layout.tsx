@@ -26,7 +26,7 @@ const Layout: React.FC<Props> = ({
 			<div>
 				<Navbar />
 				<main>{children}</main>
-				<Footer />
+				<Footer pages={pageProps.pages} />
 			</div>
 		</CommerceProvider>
 	)

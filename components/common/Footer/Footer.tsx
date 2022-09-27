@@ -10,9 +10,9 @@ import { I18nWidget } from '@components/common'
 import s from './Footer.module.css'
 import PagesManifestPlugin from 'next/dist/build/webpack/plugins/pages-manifest-plugin'
 interface Props {
-	className: string
-	children: any
-	pages?: Page
+	className?: string
+	children?: any
+	pages?: Page[]
 }
 
 const links = [
@@ -44,11 +44,54 @@ function usePages(pages?: Page[]) {
 	}
 }
 const Footer: FC<Props> = ({ className, pages }) => {
-	const { sitePages } = usePages()
+	const { sitePages } = usePages(pages)
 	const rootClassName = cn(s.root, className)
 	return (
 		<footer className={rootClassName}>
-			<div></div>
+			<Container>
+				<div>
+					<div>
+						<Link href="/">
+							<a>
+								<span>
+									<Logo />
+								</span>
+								<span>ACME</span>
+							</a>
+						</Link>
+					</div>
+					<div>
+						<div>
+							{[...links, ...sitePages].map((page) => (
+								<span key={page.url}>
+									<Link href={page.url!}>
+										<a>{page.name}</a>
+									</Link>
+								</span>
+							))}
+						</div>
+					</div>
+					<div>
+						<div>
+							<a>
+								<Github />
+							</a>
+							<I18nWidget />
+						</div>
+					</div>
+				</div>
+				<div>
+					<div>
+						<span>&copy; 2020 ACME, Inc. All rights reserved.</span>
+					</div>
+					<div>
+						<span>Created by</span>
+						<a>
+							<Vercel alt="Vercel.com" />
+						</a>
+					</div>
+				</div>
+			</Container>
 		</footer>
 	)
 }
