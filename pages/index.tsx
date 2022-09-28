@@ -18,7 +18,7 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	return (
 		<>
 			<Grid variant="filled">
-				{products.map((product: any, i: number) => {
+				{products.slice(0, 3).map((product: any, i: number) => {
 					return (
 						<ProductCard
 							key={product.id}
@@ -78,11 +78,16 @@ export async function getStaticProps({
 		...({ featured: true } as any),
 	})
 
+	const siteInfoPromise = commerce.getSiteInfo({ config, preview })
+
 	const { products } = await productsPromise
+
+	const { categories, brands } = await siteInfoPromise
 
 	return {
 		props: {
 			products,
+			categories,
 		},
 		revalidate: 60,
 	}

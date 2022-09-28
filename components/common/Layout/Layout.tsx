@@ -21,10 +21,12 @@ const Layout: React.FC<Props> = ({
 		label: c.name,
 		href: `/search/${c.slug}`,
 	}))
+
+	console.log(navBarLinks)
 	return (
 		<CommerceProvider locale={locale}>
 			<div>
-				<Navbar />
+				<Navbar links={navBarLinks} />
 				<main>{children}</main>
 				<Footer pages={pageProps.pages} />
 			</div>

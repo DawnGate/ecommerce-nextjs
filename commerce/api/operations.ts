@@ -1,3 +1,4 @@
+import { GetSiteInfoOperation } from '@commerce/types/site'
 import { APIProvider, CommerceAPI } from '.'
 import { GetAllPagesOperation } from '../types/page'
 import { GetAllProductsOperation } from '../types/product'
@@ -6,7 +7,11 @@ const noop = () => {
 	throw new Error('Not implemented')
 }
 
-export const OPERATIONS = ['getAllPages', 'getAllProducts'] as const
+export const OPERATIONS = [
+	'getAllPages',
+	'getAllProducts',
+	'getSiteInfo',
+] as const
 
 export type AllowedOperations = typeof OPERATIONS[number]
 
@@ -44,6 +49,20 @@ export type Operations<P extends APIProvider> = {
 		<T extends GetAllProductsOperation>(
 			opts: {
 				variables?: T['variables']
+				config?: P['config']
+				preview?: boolean
+			} & OperationOptions
+		): Promise<T['data']>
+	}
+
+	getSiteInfo: {
+		<T extends GetSiteInfoOperation>(opts: {
+			config?: P['config']
+			preview?: boolean
+		}): Promise<T['data']>
+
+		<T extends GetSiteInfoOperation>(
+			opts: {
 				config?: P['config']
 				preview?: boolean
 			} & OperationOptions
