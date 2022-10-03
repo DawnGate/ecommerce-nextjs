@@ -55,7 +55,7 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
 				})}
 			</Grid>
 			<Marquee>
-				{products.slice(3).map((product: any, i: number) => (
+				{products.map((product: any, i: number) => (
 					<ProductCard key={product.id} product={product} variant="slim" />
 				))}
 			</Marquee>
