@@ -18,24 +18,24 @@ interface NavbarProps {
 
 const Navbar: FC<NavbarProps> = ({ links }) => (
 	<NavbarRoot>
-		<Container>
-			<div>
-				<div>
+		<Container clean className="mx-auto max-w-8xl px-6">
+			<div className={s.nav}>
+				<div className="flex items-center flex-1">
 					<Link href="/">
-						<a>
+						<a className={s.logo} aria-label="Logo">
 							<Logo />
 						</a>
 					</Link>
-					<nav>
+					<nav className={s.navMenu}>
 						<Link href="/search">
-							<a>All</a>
+							<a className={s.link}>All</a>
 						</Link>
+						{links?.map((l) => (
+							<Link href={l.href} key={l.href}>
+								<a className={s.link}>{l.label}</a>
+							</Link>
+						))}
 					</nav>
-					{links?.map((l) => (
-						<Link href={l.href} key={l.href}>
-							<a>{l.label}</a>
-						</Link>
-					))}
 				</div>
 			</div>
 		</Container>

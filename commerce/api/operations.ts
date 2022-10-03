@@ -79,6 +79,7 @@ export type APIOperations<P extends APIProvider> = {
 }
 
 export type AllOperations<P extends APIProvider> = {
+	// -? remove optional in K key of Type
 	[K in keyof APIOperations<P>]-?: P['operations'][K] extends (
 		...args: any
 	) => any

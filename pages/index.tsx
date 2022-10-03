@@ -14,7 +14,6 @@ import { Grid, Hero, Marquee } from '@components/ui'
 import { ProductCard } from '@components/products'
 
 const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
-	console.log(products)
 	return (
 		<>
 			<Grid variant="filled">

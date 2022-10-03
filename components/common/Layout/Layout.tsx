@@ -22,7 +22,6 @@ const Layout: React.FC<Props> = ({
 		href: `/search/${c.slug}`,
 	}))
 
-	console.log(navBarLinks)
 	return (
 		<CommerceProvider locale={locale}>
 			<div>
