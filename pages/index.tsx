@@ -77,16 +77,22 @@ export async function getStaticProps({
 		...({ featured: true } as any),
 	})
 
+	const pagesPromise = commerce.getAllPages({ config, preview })
+
 	const siteInfoPromise = commerce.getSiteInfo({ config, preview })
 
 	const { products } = await productsPromise
 
 	const { categories, brands } = await siteInfoPromise
 
+	const { pages } = await pagesPromise
+
 	return {
 		props: {
 			products,
 			categories,
+			brands,
+			pages,
 		},
 		revalidate: 60,
 	}

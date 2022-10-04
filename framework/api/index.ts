@@ -4,6 +4,7 @@ import { getCommerceApi as commerceApi } from '@commerce/api'
 
 import getAllProducts from './operations/get-all-product'
 import getSiteInfo from './operations/get-site-info'
+import getAllPages from './operations/get-all-pages'
 import createFetcher from './utils/fetch-local'
 
 export interface LocalConfig extends CommerceAPIConfig {}
@@ -20,6 +21,7 @@ const config: LocalConfig = {
 const operations = {
 	getAllProducts,
 	getSiteInfo,
+	getAllPages,
 }
 
 export const provider = { config, operations }
