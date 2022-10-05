@@ -1,2 +1,1 @@
-const data = () => {}
-export default data
+export { default } from './data.json'

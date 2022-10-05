@@ -5,6 +5,13 @@ const nextConfig = {
 	images: {
 		domains: ['cdn.shopify.com'],
 	},
+	i18n: {
+		locales: ['en-US', 'es', 'vi'],
+		defaultLocale: 'en-US',
+	},
+	experimental: {
+		esmExternals: 'loose',
+	},
 }
 
 module.exports = nextConfig

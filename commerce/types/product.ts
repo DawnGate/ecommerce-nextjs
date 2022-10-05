@@ -72,3 +72,13 @@ export type GetAllProductsOperation<T extends ProductTypes = ProductTypes> = {
 		first?: number
 	}
 }
+
+export type GetAllProductPathsOperation<T extends ProductTypes = ProductTypes> =
+	{
+		data: { products: Pick<T['product'], 'path'>[] }
+		variables: {
+			relevance?: 'featured' | 'best_selling' | 'newest'
+			ids?: string[]
+			first?: number
+		}
+	}

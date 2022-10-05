@@ -1,7 +1,12 @@
 import { GetSiteInfoOperation } from '@commerce/types/site'
+import { GetAllProductPathsResult } from '@framework/api/operations/get-all-product-paths'
 import { APIProvider, CommerceAPI } from '.'
 import { GetAllPagesOperation } from '../types/page'
-import { GetAllProductsOperation } from '../types/product'
+import {
+	GetAllProductsOperation,
+	GetProductOperation,
+	GetAllProductPathsOperation,
+} from '../types/product'
 
 const noop = () => {
 	throw new Error('Not implemented')
@@ -11,6 +16,8 @@ export const OPERATIONS = [
 	'getAllPages',
 	'getAllProducts',
 	'getSiteInfo',
+	'getProduct',
+	'getAllProductPaths',
 ] as const
 
 export type AllowedOperations = typeof OPERATIONS[number]
@@ -25,6 +32,7 @@ export type OperationOptions =
 	| { query?: never; url: string }
 
 export type Operations<P extends APIProvider> = {
+	// this is a type declare, it funny i mean
 	getAllPages: {
 		<T extends GetAllPagesOperation>(opt?: {
 			config?: P['config']
@@ -37,6 +45,19 @@ export type Operations<P extends APIProvider> = {
 				preview?: boolean
 			} & OperationOptions
 		): Promise<T['data']>
+	}
+
+	getAllProductPaths: {
+		<T extends GetAllProductPathsOperation>(opts: {
+			variables?: T['variables']
+			config?: P['config']
+			preview?: boolean
+		}): Promise<T['data']>
+
+		<T extends GetAllProductPathsOperation>(opts: {
+			variables?: T['variables']
+			config?: P['config']
+		}): Promise<T['data']>
 	}
 
 	getAllProducts: {
@@ -63,6 +84,22 @@ export type Operations<P extends APIProvider> = {
 
 		<T extends GetSiteInfoOperation>(
 			opts: {
+				config?: P['config']
+				preview?: boolean
+			} & OperationOptions
+		): Promise<T['data']>
+	}
+
+	getProduct: {
+		<T extends GetProductOperation>(opts: {
+			variables: T['variables']
+			config?: P['config']
+			preview?: boolean
+		}): Promise<T['data']>
+
+		<T extends GetProductOperation>(
+			opts: {
+				variables: T['variables']
 				config?: P['config']
 				preview?: boolean
 			} & OperationOptions

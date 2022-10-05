@@ -33,6 +33,13 @@ const LOCALES_MAP: Record<string, LOCALE_DATA> = {
 			alt: 'US flag',
 		},
 	},
+	vi: {
+		name: 'Vietnamese',
+		img: {
+			filename: 'flag-vi.svg',
+			alt: 'Viet Nam',
+		},
+	},
 }
 
 const I18nWidget: FC = () => {
