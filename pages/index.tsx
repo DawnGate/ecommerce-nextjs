@@ -11,7 +11,7 @@ import { Layout } from '@components/common'
 import commerce from '@lib/api/commerce'
 
 import { Grid, Hero, Marquee } from '@components/ui'
-import { ProductCard } from '@components/products'
+import { ProductCard } from '@components/product'
 
 const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	return (

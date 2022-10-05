@@ -23,4 +23,5 @@ export default function getProductOperation({
 			product: data.products.find(({ slug }) => slug === variables!.slug),
 		}
 	}
+	return getProduct
 }

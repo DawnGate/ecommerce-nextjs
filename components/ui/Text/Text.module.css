@@ -1,0 +1,68 @@
+.body {
+	@apply text-base leading-7 max-w-6xl mx-auto;
+}
+
+.heading {
+	@apply text-5xl pt-1 pb-2 font-semibold tracking-wide cursor-pointer mb-2;
+}
+
+.pageHeading {
+	@apply pt-1 pb-4 text-2xl  leading-7 font-bold tracking-wide;
+}
+
+.seactionHeading {
+	@apply pt-1 pb-2 text-2xl font-bold tracking-wide cursor-pointer mb-2;
+}
+
+.body :is(h1, h2, h3, h4, h5, h6, p, ul, ol) {
+	@appy mb-4;
+}
+
+.body :is(h1, h2, h3, h4, h5, h6):not(:first-child) {
+	@apply mt-8;
+}
+
+.body :is(h1, h2, h3, h4, h5, h6) {
+	@apply font-semibold tracking-wide;
+}
+
+.body h1 {
+	@apply text-5xl;
+}
+
+.body h2 {
+	@apply text-4xl;
+}
+
+.body h3 {
+	@apply text-3xl;
+}
+
+.body h4 {
+	@apply text-2xl;
+}
+
+.body h5 {
+	@apply text-xl;
+}
+
+.body h6 {
+	@apply text-lg;
+}
+
+.body ul,
+.body ol {
+	@apply pl-6;
+}
+
+.body ul {
+	@apply list-disc;
+}
+
+.body a {
+	@apply underline;
+}
+
+.body a:hover {
+	@appy no-underline;
+}

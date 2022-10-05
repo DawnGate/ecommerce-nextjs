@@ -50,7 +50,17 @@ export async function getStaticProps({
 
 export async function getStaticPaths({ locales }: GetStaticPathsContext) {
 	const { products } = await commerce.getAllProductPaths()
-	return {}
+	return {
+		paths: locales
+			? locales.reduce<string[]>((arr, locale) => {
+					products.forEach((product: any) => {
+						arr.push(`/${locale}/product${product.path}`)
+					})
+					return arr
+			  }, [])
+			: products.map((product: any) => `/product${[product.path]}`),
+		fallback: 'blocking',
+	}
 }
 
 export default function Slug({

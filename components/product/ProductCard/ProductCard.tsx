@@ -12,7 +12,7 @@ import { WishlistButton } from '@components/wishlist'
 
 // import usePrice from '@framework/product/use-price'
 
-import { ProductTag } from '@components/products'
+import { ProductTag } from '@components/product'
 
 // Omit => remove some props type has same with the second arguments
 interface Props {
@@ -63,11 +63,11 @@ const ProductCard: FC<Props> = ({
 				{variant === 'simple' && <></>}
 				{variant === 'default' && (
 					<>
-						{/* <WishlistButton
+						<WishlistButton
 							className={s.wishlistButton}
 							productId={product.id}
 							variant={product.variants[0] as any}
-						/> */}
+						/>
 						<ProductTag
 							name={product.name}
 							price={`${price} ${product.price?.currencyCode}`}
