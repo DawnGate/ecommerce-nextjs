@@ -25,21 +25,23 @@ interface ProductViewProps {
 
 const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
 	const { price } = { price: 10 }
+	console.log(product)
 	return (
 		<>
-			<Container>
-				<div>
-					<div>
+			<Container className="max-w-none w-full">
+				<div className={cn(s.root, 'fit')}>
+					<div className={cn(s.main, 'fit')}>
 						<ProductTag
 							name={product.name}
 							price={`${price} ${product.price?.currencyCode}`}
 							fontSize={32}
 						/>
-						<div>
+						<div className={s.sliderContainer}>
 							<ProductSlider key={product.id}>
 								{product.images.map((image, i) => (
 									<div key={image.url}>
 										<Image
+											className={s.img}
 											src={image.url}
 											alt={image.alt || 'Product Image'}
 											width={600}
@@ -59,8 +61,44 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
 					<ProductSidebar key={product.id} product={product} />
 				</div>
 				<hr />
-				<section>{/* <Text></Text> */}</section>
+				<section>
+					<Text>Related Products</Text>
+					<div>
+						{relatedProducts.map((p) => (
+							<div key={p.path}>
+								<ProductCard
+									key={p.path}
+									variant="simple"
+									noNameTag
+									product={p}
+									className="animated fadeIn"
+									imgProps={{
+										width: 300,
+										height: 300,
+									}}
+								/>
+							</div>
+						))}
+					</div>
+				</section>
 			</Container>
+			<SEO
+				title={product.name}
+				description={product.description}
+				openGraph={{
+					type: 'website',
+					title: product.name,
+					description: product.description,
+					images: [
+						{
+							url: product.images[0]?.url,
+							width: '800',
+							height: '600',
+							alt: product.name,
+						},
+					],
+				}}
+			/>
 		</>
 	)
 }

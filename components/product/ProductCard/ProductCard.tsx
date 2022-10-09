@@ -60,7 +60,39 @@ const ProductCard: FC<Props> = ({
 						)}
 					</>
 				)}
-				{variant === 'simple' && <></>}
+				{variant === 'simple' && (
+					<>
+						<WishlistButton
+							className={s.wishlisthButton}
+							productId={product.id}
+							variant={product.variants[0]}
+						/>
+						{!noNameTag && (
+							<div className={s.header}>
+								<h3 className={s.name}>
+									<span>{product.name}</span>
+								</h3>
+								<div>{`${price} ${product.price?.currencyCode}`}</div>
+							</div>
+						)}
+						<div className={s.imageContainer}>
+							{product?.images && (
+								<div>
+									<Image
+										alt={product.name || 'Product Image'}
+										className={s.productImage}
+										src={product.images[0]?.url || placeholderImg}
+										height={540}
+										width={540}
+										quality="85"
+										layout="responsive"
+										{...imgProps}
+									/>
+								</div>
+							)}
+						</div>
+					</>
+				)}
 				{variant === 'default' && (
 					<>
 						<WishlistButton

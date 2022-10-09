@@ -1,4 +1,5 @@
 import { Layout } from '@components/common'
+import { ProductView } from '@components/product'
 import commerce from '@lib/api/commerce'
 import {
 	GetStaticPathsContext,
@@ -69,7 +70,11 @@ export default function Slug({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	// Infer getstatic props type is using in typescript
 	const router = useRouter()
-	return router.isFallback ? <h1>Loading...</h1> : <div>Hello</div>
+	return router.isFallback ? (
+		<h1>Loading...</h1>
+	) : (
+		<ProductView product={product} relatedProducts={relatedProducts} />
+	)
 }
 
 Slug.Layout = Layout

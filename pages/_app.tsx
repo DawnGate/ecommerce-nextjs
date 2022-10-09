@@ -1,5 +1,6 @@
 import '@assets/main.css'
 import '@assets/chrome-bug.css'
+import 'keen-slider/keen-slider.min.css'
 import type { AppProps, NextWebVitalsMetric } from 'next/app'
 import { FC, ReactNode, useEffect } from 'react'
 import { Head } from '@components/common'
