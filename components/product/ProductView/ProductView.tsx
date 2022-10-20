@@ -25,7 +25,6 @@ interface ProductViewProps {
 
 const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
 	const { price } = { price: 10 }
-	console.log(product)
 	return (
 		<>
 			<Container className="max-w-none w-full">
@@ -60,12 +59,15 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
 					</div>
 					<ProductSidebar key={product.id} product={product} />
 				</div>
-				<hr />
-				<section>
+				<hr className="mt-7 border-accent-2" />
+				<section className="py-12 px-6 mb-10">
 					<Text>Related Products</Text>
-					<div>
+					<div className={s.relatedProductsGrid}>
 						{relatedProducts.map((p) => (
-							<div key={p.path}>
+							<div
+								key={p.path}
+								className="animated fadeIn bg-accent-0 border border-accent-2"
+							>
 								<ProductCard
 									key={p.path}
 									variant="simple"

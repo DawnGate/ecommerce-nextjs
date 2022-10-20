@@ -14,4 +14,12 @@ const nextConfig = {
 	},
 }
 
-module.exports = nextConfig
+const commerce = require('./commerce.config.json')
+const { withCommerceConfig, getProviderName } = require('./commerce-config')
+
+module.exports = withCommerceConfig({
+	commerce,
+	...nextConfig,
+})
+
+console.log('next.config.js', JSON.stringify(module.exports, null, 2))

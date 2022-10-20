@@ -15,19 +15,19 @@ export default function getAllPagesOperation() {
 		return Promise.resolve({
 			pages: [
 				{
-					url: '/about',
+					url: 'en-US/about',
 					name: 'About',
 				},
 				{
-					url: '/term-of-use',
+					url: 'en-US/term-of-use',
 					name: 'Terms of use',
 				},
 				{
-					url: '/shipping',
+					url: 'en-US/shipping',
 					name: 'Shipping',
 				},
 				{
-					url: '/privacy-policy',
+					url: 'en-US/privacy-policy',
 					name: 'Privacy Policy',
 				},
 			],
