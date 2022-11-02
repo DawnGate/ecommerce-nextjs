@@ -53,11 +53,16 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
 							</ProductSlider>
 						</div>
 						<WishlistButton
+							className={s.wishlistButton}
 							productId={product.id}
 							variant={product.variants[0]}
 						/>
 					</div>
-					<ProductSidebar key={product.id} product={product} />
+					<ProductSidebar
+						key={product.id}
+						product={product}
+						className={s.sidebar}
+					/>
 				</div>
 				<hr className="mt-7 border-accent-2" />
 				<section className="py-12 px-6 mb-10">
