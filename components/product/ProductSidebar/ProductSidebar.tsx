@@ -3,7 +3,7 @@ import s from './ProductSidebar.module.css'
 import { FC } from 'react'
 import { Product } from '@commerce/types'
 
-import { Text } from '@components/ui'
+import { Collapse, Text } from '@components/ui'
 
 interface ProductSidebarProps {
 	product: Product
@@ -23,7 +23,17 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
 				<div className="text-accent-6 pr-1 font-medium text-sm">36 reviews</div>
 			</div>
 			<div>Add to cart</div>
-			<div className="mt-6">{/* <Collapse></Collapse> */}</div>
+			<div className="mt-6">
+				<Collapse title="Care">
+					this is a limited edition production run. Printing tarts when the drop
+					ends.
+				</Collapse>
+				<Collapse title="Details">
+					This is a limited edition production run. Printing starts when the
+					drop ends. Reminder: Bad Boys For Life. Shipping may take 10+ days due
+					to COVID-19.
+				</Collapse>
+			</div>
 		</div>
 	)
 }

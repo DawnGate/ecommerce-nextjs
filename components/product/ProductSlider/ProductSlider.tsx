@@ -107,7 +107,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
 									className: cn(child.props.className, s.thumb, {
 										[s.selected]: currentSlide === idx,
 									}),
-									id: `thmb-${idx}`,
+									id: `thumnb-${idx}`,
 									onClick: () => {
 										slider.current?.moveToIdx(idx)
 									},
