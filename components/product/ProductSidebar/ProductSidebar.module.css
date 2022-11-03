@@ -1,2 +1,13 @@
 .root {
 }
+
+.sidebar {
+}
+
+.button {
+	width: 100%;
+}
+
+.wishlisthButton {
+	@apply absolute z-30 top-0 right-0;
+}

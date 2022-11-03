@@ -3,7 +3,8 @@ import s from './ProductSidebar.module.css'
 import { FC } from 'react'
 import { Product } from '@commerce/types'
 
-import { Collapse, Text } from '@components/ui'
+import { Collapse, Text, Rating } from '@components/ui'
+import Button from '@components/ui/Button'
 
 interface ProductSidebarProps {
 	product: Product
@@ -19,10 +20,22 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
 				html={product.descriptionHtml || product.description}
 			/>
 			<div className="flex flex-row justify-between items-center">
-				{/* <Rating value={4} /> */}
+				<Rating value={4} />
 				<div className="text-accent-6 pr-1 font-medium text-sm">36 reviews</div>
 			</div>
-			<div>Add to cart</div>
+			<div>
+				<Button
+					aria-label="Add to Cart"
+					type="button"
+					className={s.button}
+					// onClick={addToCart}
+					// loading={loading}
+					// disabled={variant?.availableForSale === false}
+				>
+					{/* {variant?.availableForSale === false ? "Not Available" : "Add To Cart"} */}
+					Add To Cart
+				</Button>
+			</div>
 			<div className="mt-6">
 				<Collapse title="Care">
 					this is a limited edition production run. Printing tarts when the drop
