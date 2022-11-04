@@ -8,7 +8,12 @@ const Check = ({ ...props }) => {
 			stroke="currentColor"
 			{...props}
 		>
-			<path></path>
+			<path
+				d="M20 6 L9 17 L4 12"
+				strokeWidth="2"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			></path>
 		</svg>
 	)
 }

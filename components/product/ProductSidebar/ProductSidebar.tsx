@@ -1,10 +1,13 @@
 import s from './ProductSidebar.module.css'
 
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { Product } from '@commerce/types'
 
 import { Collapse, Text, Rating } from '@components/ui'
 import Button from '@components/ui/Button'
+import { SelectedOptions } from '../helpers'
+
+import { ProductOptions } from '@components/product'
 
 interface ProductSidebarProps {
 	product: Product
@@ -12,9 +15,14 @@ interface ProductSidebarProps {
 }
 
 const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
+	const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>({})
 	return (
 		<div className={className}>
-			{/* <ProductOptions/> */}
+			<ProductOptions
+				options={product.options}
+				selectedOptions={selectedOptions}
+				setSelectedOptions={setSelectedOptions}
+			/>
 			<Text
 				className="pb-4 break-words w-full max-w-full"
 				html={product.descriptionHtml || product.description}
